@@ -14,13 +14,23 @@ const translations = {
     about: 'About',
     projects: 'Projects',
     learnMore: 'Learn more',
-    copyright: '© {year} Victor Januário. All rights reserved.'
+    copyright: '© {year} Victor Januário. All rights reserved.',
+    viewProject: 'View Project',
+    backToHome: 'Back to home page',
+    projectNotFound: 'Project not found',
+    description: 'Description',
+    technologiesUsed: 'Technologies Used'
   },
   pt: {
     about: 'Sobre',
     projects: 'Projetos',
     learnMore: 'Saiba mais',
-    copyright: '© {year} Victor Januário. Todos os direitos reservados.'
+    copyright: '© {year} Victor Januário. Todos os direitos reservados.',
+    viewProject: 'Ver Projeto',
+    backToHome: 'Voltar para a página inicial',
+    projectNotFound: 'Projeto não encontrado',
+    description: 'Descrição',
+    technologiesUsed: 'Tecnologias Utilizadas'
   }
 };
 
