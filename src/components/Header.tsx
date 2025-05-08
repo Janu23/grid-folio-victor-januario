@@ -1,8 +1,13 @@
 
 import React, { useEffect, useState } from 'react';
+import { Globe } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Header: React.FC = () => {
   const [currentDate, setCurrentDate] = useState<string>('');
+  const { language, setLanguage } = useLanguage();
   
   useEffect(() => {
     const updateDate = () => {
@@ -12,7 +17,7 @@ const Header: React.FC = () => {
         day: 'numeric', 
         year: 'numeric' 
       };
-      const dateString = now.toLocaleDateString('en-US', options);
+      const dateString = now.toLocaleDateString(language === 'en' ? 'en-US' : 'pt-BR', options);
       setCurrentDate(dateString);
     };
     
@@ -21,10 +26,22 @@ const Header: React.FC = () => {
     const interval = setInterval(updateDate, 60000);
     
     return () => clearInterval(interval);
-  }, []);
+  }, [language]);
 
   return (
-    <header className="flex justify-end p-6">
+    <header className="flex justify-between items-center p-6">
+      <div className="language-switcher">
+        <Select value={language} onValueChange={setLanguage}>
+          <SelectTrigger className="w-[100px] border-2 border-black bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
+            <Globe className="mr-2 h-4 w-4" />
+            <SelectValue placeholder="Language" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="en">English</SelectItem>
+            <SelectItem value="pt">Português</SelectItem>
+          </SelectContent>
+        </Select>
+      </div>
       <div className="font-mono text-sm md:text-base">{currentDate}</div>
     </header>
   );

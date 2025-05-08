@@ -4,27 +4,39 @@ import Header from '@/components/Header';
 import Terminal from '@/components/Terminal';
 import ProjectCard from '@/components/ProjectCard';
 import Footer from '@/components/Footer';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Index = () => {
-  const aboutText = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at lacus eu urna fermentum fringilla. Proin ut orci nec tellus convallis faucibus eu at turpis. Suspendisse potenti. In eu urna vel ex ultrices efficitur nec nec nunc. Quisque vehicula eget nisi sit amet feugiat. Nulla facilisi. Donec elementum nisi non enim dapibus, quis viverra quam cursus. Maecenas nec lorem id turpis elementum auctor. Duis eu ipsum vitae arcu mollis tincidunt.";
+  const { t, language } = useLanguage();
+  
+  const aboutText = {
+    en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at lacus eu urna fermentum fringilla. Proin ut orci nec tellus convallis faucibus eu at turpis. Suspendisse potenti. In eu urna vel ex ultrices efficitur nec nec nunc. Quisque vehicula eget nisi sit amet feugiat. Nulla facilisi. Donec elementum nisi non enim dapibus, quis viverra quam cursus. Maecenas nec lorem id turpis elementum auctor. Duis eu ipsum vitae arcu mollis tincidunt.",
+    pt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at lacus eu urna fermentum fringilla. Proin ut orci nec tellus convallis faucibus eu at turpis. Suspendisse potenti. In eu urna vel ex ultrices efficitur nec nec nunc. Quisque vehicula eget nisi sit amet feugiat. Nulla facilisi. Donec elementum nisi non enim dapibus, quis viverra quam cursus. Maecenas nec lorem id turpis elementum auctor. Duis eu ipsum vitae arcu mollis tincidunt."
+  };
   
   const projects = [
     {
       id: "project1",
-      title: "E-commerce Platform",
-      description: "Um sistema completo de e-commerce desenvolvido com React e Node.js, incluindo pagamentos online, gerenciamento de pedidos e painel administrativo.",
+      title: language === 'en' ? "E-commerce Platform" : "Plataforma de E-commerce",
+      description: language === 'en' ? 
+        "A complete e-commerce system developed with React and Node.js, including online payments, order management and admin panel." : 
+        "Um sistema completo de e-commerce desenvolvido com React e Node.js, incluindo pagamentos online, gerenciamento de pedidos e painel administrativo.",
       image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: "project2",
-      title: "App de Finanças Pessoais",
-      description: "Aplicativo mobile para controle de finanças pessoais com visualização de gráficos, categorizações automáticas e previsões de gastos.",
+      title: language === 'en' ? "Personal Finance App" : "App de Finanças Pessoais",
+      description: language === 'en' ? 
+        "Mobile application for personal finance control with chart visualization, automatic categorization and expense forecasts." : 
+        "Aplicativo mobile para controle de finanças pessoais com visualização de gráficos, categorizações automáticas e previsões de gastos.",
       image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
     },
     {
       id: "project3",
-      title: "Sistema de Gestão Empresarial",
-      description: "Software de gestão empresarial com módulos de RH, contabilidade, estoque e CRM integrados em uma única plataforma web.",
+      title: language === 'en' ? "Business Management System" : "Sistema de Gestão Empresarial",
+      description: language === 'en' ? 
+        "Business management software with HR, accounting, inventory and CRM modules integrated into a single web platform." : 
+        "Software de gestão empresarial com módulos de RH, contabilidade, estoque e CRM integrados em uma única plataforma web.",
       image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
     }
   ];
@@ -44,20 +56,26 @@ const Index = () => {
             />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold mb-2">Victor Januário</h1>
-          <p className="text-lg md:text-xl text-gray-700 mb-4">Desenvolvedor de Software</p>
+          <p className="text-lg md:text-xl text-gray-700 mb-4">
+            {language === 'en' ? 'Software Developer' : 'Desenvolvedor de Software'}
+          </p>
         </section>
 
         {/* About Section */}
         <section className="mb-16" id="about">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 border-b-2 border-black pb-2">About</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 border-b-2 border-black pb-2">
+            {t('about')}
+          </h2>
           <div className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 md:p-6 h-72">
-            <Terminal aboutText={aboutText} />
+            <Terminal aboutText={aboutText[language]} />
           </div>
         </section>
 
         {/* Projects Section */}
         <section className="mb-16" id="projects">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 border-b-2 border-black pb-2">Projects</h2>
+          <h2 className="text-2xl md:text-3xl font-bold mb-6 border-b-2 border-black pb-2">
+            {t('projects')}
+          </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {projects.map(project => (
               <ProjectCard

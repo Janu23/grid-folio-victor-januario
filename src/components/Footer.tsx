@@ -1,15 +1,18 @@
 
 import React from 'react';
 import { Github, Linkedin, Mail } from 'lucide-react';
+import { useLanguage } from '@/hooks/useLanguage';
 
 const Footer: React.FC = () => {
+  const { t } = useLanguage();
+  
   return (
     <footer className="mt-20 py-8 border-t border-black">
       <div className="container px-4">
         <div className="flex flex-col md:flex-row items-center justify-between">
           <div className="mb-4 md:mb-0">
             <p className="font-mono text-sm">
-              © {new Date().getFullYear()} Victor Januário. Todos os direitos reservados.
+              {t('copyright')}
             </p>
           </div>
           <div className="flex space-x-4">
