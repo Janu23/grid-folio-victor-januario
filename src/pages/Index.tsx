@@ -22,7 +22,7 @@ const Index = () => {
       description: language === 'en' ? 
         "A collaborative project that transforms personal stories from the Covid-19 pandemic into an immersive sound map." : 
         "É um projeto colaborativo que transforma histórias pessoais da pandemia da Covid-19 em um mapa sonoro.",
-      image: "public/projects/p01-01cartografias.png",
+      image: "/projects/p01-01cartografias.png",
     },
     {
       id: "project2",
