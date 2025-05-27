@@ -27,7 +27,7 @@ const ProjectDetail = () => {
         technologies: ["Javascript", "PHP", "Mapbox", "AWS S3"],
         linkText: "Ver Projeto"
       },
-      image: "../public/projects/p01-02cartografias.png",
+      image: "../projects/p01-02cartografias.png",
       link: "https://cartografiadasmemorias.org"
     },
     project2: {
@@ -45,7 +45,7 @@ const ProjectDetail = () => {
         technologies: ["Android", "Kotlin"],
         linkText: "Ver Projeto"
       },
-      image: "../public/projects/p02-02quizz.jpg",
+      image: "../projects/p02-02quizz.jpg",
       link: "https://github.com/Janu23/Flags"
     },
     project3: {
@@ -63,7 +63,7 @@ const ProjectDetail = () => {
         technologies: ["Android SDK", "Kotlin"],
         linkText: "Ver Projeto"
       },
-      image: "../public/projects/p03-01mega.png",
+      image: "../projects/p03-01mega.png",
       link: "https://github.com/Janu23/Luck"
     },
     project4: {
@@ -81,7 +81,7 @@ const ProjectDetail = () => {
         technologies: ["Blogspot"],
         linkText: "Ver Projeto"
       },
-      image: "../public/projects/p04-01mente.png",
+      image: "../projects/p04-01mente.png",
       link: "https://mementecriativa.blogspot.com/"
     }
   };
