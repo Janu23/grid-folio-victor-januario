@@ -38,7 +38,7 @@ const Header: React.FC = () => {
           </SelectTrigger>
           <SelectContent>
             <SelectItem value="en">English</SelectItem>
-            <SelectItem value="pt">Português</SelectItem>
+            <SelectItem value="pt">Portuguese</SelectItem>
           </SelectContent>
         </Select>
       </div>

@@ -10,36 +10,48 @@ const Index = () => {
   const { t, language } = useLanguage();
   
   const aboutText = {
-    en: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at lacus eu urna fermentum fringilla. Proin ut orci nec tellus convallis faucibus eu at turpis. Suspendisse potenti. In eu urna vel ex ultrices efficitur nec nec nunc. Quisque vehicula eget nisi sit amet feugiat. Nulla facilisi. Donec elementum nisi non enim dapibus, quis viverra quam cursus. Maecenas nec lorem id turpis elementum auctor. Duis eu ipsum vitae arcu mollis tincidunt.",
-    pt: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam at lacus eu urna fermentum fringilla. Proin ut orci nec tellus convallis faucibus eu at turpis. Suspendisse potenti. In eu urna vel ex ultrices efficitur nec nec nunc. Quisque vehicula eget nisi sit amet feugiat. Nulla facilisi. Donec elementum nisi non enim dapibus, quis viverra quam cursus. Maecenas nec lorem id turpis elementum auctor. Duis eu ipsum vitae arcu mollis tincidunt."
+    en: "Full Stack Developer with experience in building mobile solutions (Android/Kotlin), robust backend systems (Kotlin/Java + Spring Framework), and web applications (React, Node.js, PHP/Laravel), always applying best practices like Clean Architecture, SOLID principles, and RESTful APIs. I work with cloud (AWS), databases (MySQL, PostgreSQL, MongoDB), and Power BI data analysis—turning numbers into strategic decisions. \n\nI've contributed to projects in civil engineering, energy management, and cultural preservation because I love diving into new domains and solving complex problems (and the simple ones too!). \n\nWhen I’m not coding, I play the trumpet, challenge people to chess (bring it on!), collect vinyl records, discuss books in my literary club, or learn something new.",
+    pt: "Desenvolvedor Full Stack com experiência em criar soluções mobile (Android/Kotlin), backend robusto (Kotlin/Java + Spring Framework) e web (React, Node.js, PHP/Laravel), sempre aplicando boas práticas como Clean Architecture, SOLID e APIs RESTful. Trabalho com cloud (AWS), bancos de dados (MySQL, PostgreSQL e MongoDB) e análise de dados no Power BI, transformando números em decisões estratégicas. \n\nJá atuei em projetos de engenharia civil, gestão energética e preservação cultural, porque adoro aprender novos domínios e resolver problemas complexos (e os simples também!). \n\nQuando não estou codando, toco trompete, jogo xadrez (aceito desafios!), coleciono vinis, discuto livros no meu clube literário ou estou aprendendo alguma coisa nova."
   };
   
   const projects = [
     {
       id: "project1",
-      title: language === 'en' ? "E-commerce Platform" : "Plataforma de E-commerce",
+      title: language === 'en' ? "Cartography of Memories" : "Cartografia das Memórias",
+      year: "2020",
       description: language === 'en' ? 
-        "A complete e-commerce system developed with React and Node.js, including online payments, order management and admin panel." : 
-        "Um sistema completo de e-commerce desenvolvido com React e Node.js, incluindo pagamentos online, gerenciamento de pedidos e painel administrativo.",
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b?auto=format&fit=crop&w=800&q=80",
+        "A collaborative project that transforms personal stories from the Covid-19 pandemic into an immersive sound map." : 
+        "É um projeto colaborativo que transforma histórias pessoais da pandemia da Covid-19 em um mapa sonoro.",
+      image: "public/projects/p01-01cartografias.png",
     },
     {
       id: "project2",
-      title: language === 'en' ? "Personal Finance App" : "App de Finanças Pessoais",
+      title: language === 'en' ? "Quizz App" : "Quizz App",
+      year: "2024",
       description: language === 'en' ? 
-        "Mobile application for personal finance control with chart visualization, automatic categorization and expense forecasts." : 
-        "Aplicativo mobile para controle de finanças pessoais com visualização de gráficos, categorizações automáticas e previsões de gastos.",
-      image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?auto=format&fit=crop&w=800&q=80",
+        "Developed Quizz App as an interactive educational game testing knowledge of all 26 Brazilian state flags plus the Federal District. Combines learning with fun through visual identification challenges." : 
+        "Desenvolvi o Quizz App como um jogo educativo interativo que testa conhecimentos sobre as bandeiras dos 26 estados brasileiros e do Distrito Federal. O aplicativo combina aprendizagem com diversão através de um desafio de identificação visual.",
+      image: "public/projects/p02-01quizz.jpg",
     },
     {
       id: "project3",
-      title: language === 'en' ? "Business Management System" : "Sistema de Gestão Empresarial",
+      title: language === 'en' ? "Mega Sorte" : "Mega Sorte",      
+      year: "2023",
       description: language === 'en' ? 
-        "Business management software with HR, accounting, inventory and CRM modules integrated into a single web platform." : 
-        "Software de gestão empresarial com módulos de RH, contabilidade, estoque e CRM integrados em uma única plataforma web.",
-      image: "https://images.unsplash.com/photo-1461749280684-dccba630e2f6?auto=format&fit=crop&w=800&q=80",
+        "Developed Mega Sorte as a study project to enter Android development with Kotlin. The app generates random combinations of 6 numbers for lottery games, featuring an intuitive interface and simple functionality." : 
+        "Desenvolvi o Mega Sorte como um projeto de estudo para ingressar no desenvolvimento Android com Kotlin. O aplicativo gera combinações aleatórias de 6 números, simulando jogos de loteria, com interface intuitiva e funcionalidades simples.",
+      image: "public/projects/p03-01mega.png",
+    },
+    {
+      id: "project4",
+      title: language === 'en' ? "Creative Thinking" : "Mente Criativa",
+      year: "2024",
+      description: language === 'en' ? 
+        "A space for critical-creative reflection on how technology and society shape each other." : 
+        "É um espaço de reflexão onde examino as complexas relações entre tecnologia e sociedade através de uma perspectiva crítica e criativa.",
+      image: "public/projects/p04-01mente.png",
     }
-  ];
+  ].sort((a, b) => b.year.localeCompare(a.year)); 
 
   return (
     <div className="grid-bg min-h-screen font-mono">
@@ -82,6 +94,7 @@ const Index = () => {
                 key={project.id}
                 id={project.id}
                 title={project.title}
+                year={project.year}
                 description={project.description}
                 image={project.image}
               />

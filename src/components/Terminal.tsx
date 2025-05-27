@@ -11,7 +11,7 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
   const [showOutput, setShowOutput] = useState(false);
 
   useEffect(() => {
-    const whoamiCommand = '$whoami';
+    const whoamiCommand = 'whoami';
     let index = 0;
 
     // Type the whoami command
@@ -42,7 +42,7 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
       </div>
       <div className="text-terminal-text">
         <pre className="terminal-pre">
-          <span className="text-terminal-prompt">guest@victor-portfolio</span>
+          <span className="text-terminal-prompt">user@victor</span>
           <span className="text-terminal-text">:</span>
           <span className="text-blue-400">~</span>
           <span className="text-terminal-text">$ </span>
@@ -56,7 +56,7 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
             <p className="mb-2 text-terminal-text">{aboutText}</p>
             <div className="mt-4">
               <pre className="terminal-pre">
-                <span className="text-terminal-prompt">guest@victor-portfolio</span>
+                <span className="text-terminal-prompt">user@victor</span>
                 <span className="text-terminal-text">:</span>
                 <span className="text-blue-400">~</span>
                 <span className="text-terminal-text">$ </span>
