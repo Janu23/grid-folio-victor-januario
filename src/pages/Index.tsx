@@ -1,9 +1,9 @@
-
 import React from 'react';
 import Header from '@/components/Header';
 import Terminal from '@/components/Terminal';
 import ProjectCard from '@/components/ProjectCard';
 import Footer from '@/components/Footer';
+import SocialButtons from '@/components/SocialButtons';
 import { useLanguage } from '@/hooks/useLanguage';
 
 const Index = () => {
@@ -71,6 +71,7 @@ const Index = () => {
           <p className="text-lg md:text-xl text-gray-700 mb-4">
             {language === 'en' ? 'Software Developer' : 'Desenvolvedor de Software'}
           </p>
+          <SocialButtons />
         </section>
 
         {/* About Section */}
