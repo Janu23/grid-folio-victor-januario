@@ -28,7 +28,7 @@ const SocialButtons = () => {
         asChild
       >
         <a 
-          href="https://linkedin.com/in/seuusuario" 
+          href="https://www.linkedin.com/in/victor-januario/" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-2"
@@ -45,7 +45,7 @@ const SocialButtons = () => {
         asChild
       >
         <a 
-          href="https://github.com/seuusuario" 
+          href="https://github.com/Janu23" 
           target="_blank" 
           rel="noopener noreferrer"
           className="flex items-center gap-2"
