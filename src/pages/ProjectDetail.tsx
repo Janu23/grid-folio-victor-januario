@@ -1,5 +1,4 @@
-
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft } from 'lucide-react';
 import Header from '@/components/Header';
@@ -10,7 +9,11 @@ const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const { language } = useLanguage();
 
-  // Mock project data with translations
+  // Scroll to top when component mounts
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const projectsData = {
     project1: {
       en: {

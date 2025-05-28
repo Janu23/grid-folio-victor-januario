@@ -10,7 +10,7 @@ const SocialButtons = () => {
   const { language } = useLanguage();
 
   const handleEmailClick = () => {
-    const email = 'victorjdacruz@gmail.com'; // Substitua pelo seu email real
+    const email = 'victorjdacruz@gmail.com';
     navigator.clipboard.writeText(email);
     
     toast({
@@ -20,49 +20,49 @@ const SocialButtons = () => {
   };
 
   return (
-    <div className="flex gap-4 justify-center mt-4">
+    <div className="flex flex-wrap gap-3 justify-center mt-4 px-4">
       <Button
         variant="outline"
-        size="lg"
-        className="rounded-full border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all"
+        size="sm"
+        className="rounded-full border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all text-xs md:text-sm"
         asChild
       >
         <a 
           href="https://www.linkedin.com/in/victor-januario/" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center gap-2"
+          className="flex items-center gap-1 md:gap-2"
         >
-          <Linkedin size={20} />
-          LinkedIn
+          <Linkedin size={16} className="md:w-5 md:h-5" />
+          <span className="hidden sm:inline">LinkedIn</span>
         </a>
       </Button>
 
       <Button
         variant="outline"
-        size="lg"
-        className="rounded-full border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all"
+        size="sm"
+        className="rounded-full border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all text-xs md:text-sm"
         asChild
       >
         <a 
           href="https://github.com/Janu23" 
           target="_blank" 
           rel="noopener noreferrer"
-          className="flex items-center gap-2"
+          className="flex items-center gap-1 md:gap-2"
         >
-          <Github size={20} />
-          GitHub
+          <Github size={16} className="md:w-5 md:h-5" />
+          <span className="hidden sm:inline">GitHub</span>
         </a>
       </Button>
 
       <Button
         variant="outline"
-        size="lg"
-        className="rounded-full border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all"
+        size="sm"
+        className="rounded-full border-2 border-black shadow-[3px_3px_0px_0px_rgba(0,0,0,1)] hover:shadow-[1px_1px_0px_0px_rgba(0,0,0,1)] transition-all text-xs md:text-sm"
         onClick={handleEmailClick}
       >
-        <Mail size={20} className="mr-2" />
-        Email
+        <Mail size={16} className="md:w-5 md:h-5 mr-1 md:mr-2" />
+        <span className="hidden sm:inline">Email</span>
       </Button>
     </div>
   );
