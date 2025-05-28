@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
+import { ScrollArea } from '@/components/ui/scroll-area';
 
 interface TerminalProps {
   aboutText: string;
@@ -40,32 +41,35 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
         <div className="w-3 h-3 rounded-full bg-green-500"></div>
       </div>
-      <div className="text-terminal-text">
-        <pre className="terminal-pre">
-          <span className="text-terminal-prompt">user@victor</span>
-          <span className="text-terminal-text">:</span>
-          <span className="text-blue-400">~</span>
-          <span className="text-terminal-text">$ </span>
-          <span className="text-terminal-command">{typedWhoami}</span>
-          {showPrompt && <span className="cursor"></span>}
-        </pre>
-        
-        {showOutput && (
-          <div className="mt-2 text-terminal-output">
-            <p className="mb-4">Victor Januário</p>
-            <p className="mb-2 text-terminal-text">{aboutText}</p>
-            <div className="mt-4">
-              <pre className="terminal-pre">
-                <span className="text-terminal-prompt">user@victor</span>
-                <span className="text-terminal-text">:</span>
-                <span className="text-blue-400">~</span>
-                <span className="text-terminal-text">$ </span>
-                <span className="cursor"></span>
-              </pre>
+      
+      <ScrollArea className="h-[calc(100%-2rem)] text-terminal-text">
+        <div className="pr-4">
+          <pre className="terminal-pre">
+            <span className="text-terminal-prompt">user@victor</span>
+            <span className="text-terminal-text">:</span>
+            <span className="text-blue-400">~</span>
+            <span className="text-terminal-text">$ </span>
+            <span className="text-terminal-command">{typedWhoami}</span>
+            {showPrompt && <span className="cursor"></span>}
+          </pre>
+          
+          {showOutput && (
+            <div className="mt-2 text-terminal-output">
+              <p className="mb-4">Victor Januário</p>
+              <p className="mb-2 text-terminal-text whitespace-pre-wrap">{aboutText}</p>
+              <div className="mt-4">
+                <pre className="terminal-pre">
+                  <span className="text-terminal-prompt">user@victor</span>
+                  <span className="text-terminal-text">:</span>
+                  <span className="text-blue-400">~</span>
+                  <span className="text-terminal-text">$ </span>
+                  <span className="cursor"></span>
+                </pre>
+              </div>
             </div>
-          </div>
-        )}
-      </div>
+          )}
+        </div>
+      </ScrollArea>
     </div>
   );
 };

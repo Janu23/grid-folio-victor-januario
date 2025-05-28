@@ -79,7 +79,7 @@ const Index = () => {
           <h2 className="text-2xl md:text-3xl font-bold mb-6 border-b-2 border-black pb-2">
             {t('about')}
           </h2>
-          <div className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 md:p-6 h-96">
+          <div className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 md:p-6 h-96 md:h-96">
             <Terminal aboutText={aboutText[language]} />
           </div>
         </section>
