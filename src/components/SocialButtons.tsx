@@ -10,7 +10,7 @@ const SocialButtons = () => {
   const { language } = useLanguage();
 
   const handleEmailClick = () => {
-    const email = 'victor@exemplo.com'; // Substitua pelo seu email real
+    const email = 'victorjdacruz@gmail.com'; // Substitua pelo seu email real
     navigator.clipboard.writeText(email);
     
     toast({
