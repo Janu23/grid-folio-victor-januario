@@ -1,6 +1,7 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useRef } from 'react';
 import { ScrollArea } from '@/components/ui/scroll-area';
+import { ChevronDown } from 'lucide-react';
 
 interface TerminalProps {
   aboutText: string;
@@ -10,6 +11,8 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
   const [typedWhoami, setTypedWhoami] = useState('');
   const [showPrompt, setShowPrompt] = useState(true);
   const [showOutput, setShowOutput] = useState(false);
+  const [showScrollIndicator, setShowScrollIndicator] = useState(false);
+  const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const whoamiCommand = 'whoami';
@@ -27,6 +30,15 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
         setTimeout(() => {
           setShowPrompt(false);
           setShowOutput(true);
+          
+          // Check if content is scrollable after output is shown
+          setTimeout(() => {
+            const scrollElement = scrollAreaRef.current?.querySelector('[data-radix-scroll-area-viewport]');
+            if (scrollElement) {
+              const hasScroll = scrollElement.scrollHeight > scrollElement.clientHeight;
+              setShowScrollIndicator(hasScroll);
+            }
+          }, 100);
         }, 500);
       }
     }, 100);
@@ -34,16 +46,22 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
     return () => clearInterval(typeInterval);
   }, []);
 
+  const handleScroll = (e: React.UIEvent<HTMLDivElement>) => {
+    const target = e.target as HTMLDivElement;
+    const isNearBottom = target.scrollTop + target.clientHeight >= target.scrollHeight - 20;
+    setShowScrollIndicator(!isNearBottom && target.scrollHeight > target.clientHeight);
+  };
+
   return (
-    <div className="bg-terminal-bg p-4 rounded-md w-full h-full overflow-hidden font-mono text-sm md:text-base">
+    <div className="bg-terminal-bg p-4 rounded-md w-full h-full overflow-hidden font-mono text-sm md:text-base relative">
       <div className="flex space-x-2 mb-2">
         <div className="w-3 h-3 rounded-full bg-red-500"></div>
         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
         <div className="w-3 h-3 rounded-full bg-green-500"></div>
       </div>
       
-      <ScrollArea className="h-[calc(100%-2rem)] text-terminal-text">
-        <div className="pr-4">
+      <ScrollArea ref={scrollAreaRef} className="h-[calc(100%-2rem)] text-terminal-text">
+        <div className="pr-4" onScroll={handleScroll}>
           <pre className="terminal-pre">
             <span className="text-terminal-prompt">user@victor</span>
             <span className="text-terminal-text">:</span>
@@ -70,6 +88,20 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
           )}
         </div>
       </ScrollArea>
+      
+      {/* Scroll Indicator */}
+      {showScrollIndicator && (
+        <div className="absolute bottom-2 right-2 flex flex-col items-center">
+          <div className="bg-terminal-bg/80 rounded-full p-1 border border-terminal-text/30">
+            <ChevronDown className="w-4 h-4 text-terminal-text animate-bounce" />
+          </div>
+        </div>
+      )}
+      
+      {/* Bottom fade gradient for scroll indication */}
+      {showScrollIndicator && (
+        <div className="absolute bottom-0 left-0 right-0 h-8 bg-gradient-to-t from-terminal-bg to-transparent pointer-events-none" />
+      )}
     </div>
   );
 };
