@@ -18,7 +18,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, year, description,
   return (
     <Link to={`/project/${id}`} className="block">
       <div className="border-2 border-black p-4 bg-white shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] transition duration-300 cursor-pointer">
-        <div className="relative aspect-video w-full overflow-hidden mb-4">
+        <div className="relative aspect-video w-full overflow-hidden mb-4 border-2 border-black">
           <img 
             src={image} 
             alt={title} 
