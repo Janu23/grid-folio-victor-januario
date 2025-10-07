@@ -65,6 +65,10 @@ const Index = () => {
               src="/lovable-uploads/982b3f5f-ccc6-47b6-9a8e-c6f060587abe.png" 
               alt="Victor Januário" 
               className="w-full h-full object-cover"
+              width="192"
+              height="192"
+              fetchPriority="high"
+              loading="eager"
             />
           </div>
           <h1 className="text-3xl md:text-4xl font-bold mb-2">Victor Januário</h1>
