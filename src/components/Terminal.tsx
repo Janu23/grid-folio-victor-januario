@@ -92,9 +92,7 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
       {/* Scroll Indicator */}
       {showScrollIndicator && (
         <div className="absolute bottom-4 right-4">
-          <div className="bg-white border-2 border-black p-2 shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <ChevronDown className="w-5 h-5 text-black animate-bounce" strokeWidth={3} />
-          </div>
+          <ChevronDown className="w-5 h-5 text-terminal-prompt animate-bounce" strokeWidth={3} />
         </div>
       )}
       
