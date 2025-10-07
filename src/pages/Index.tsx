@@ -67,6 +67,7 @@ const Index = () => {
               className="w-full h-full object-cover"
               width="192"
               height="192"
+              sizes="(max-width: 768px) 160px, 192px"
               fetchPriority="high"
               loading="eager"
             />

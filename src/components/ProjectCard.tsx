@@ -26,6 +26,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({ id, title, year, description,
             loading="lazy"
             width="400"
             height="225"
+            sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
         </div>
         <h3 className="text-xl font-bold mb-2">{title}</h3>
