@@ -108,5 +108,6 @@
 
 .cursor::after {
   content: "_";
+  color: #ffffff;
   @apply animate-cursor-blink;
 }
