@@ -23,7 +23,7 @@ const Footer: React.FC = () => {
               className="hover:text-gray-600 transition-colors"
               aria-label="Github"
             >
-              <Github size={20} />
+              <Github size={20} aria-hidden="true" />
             </a>
             <a 
               href="https://www.linkedin.com/in/victor-januario/" 
@@ -32,14 +32,14 @@ const Footer: React.FC = () => {
               className="hover:text-gray-600 transition-colors"
               aria-label="LinkedIn"
             >
-              <Linkedin size={20} />
+              <Linkedin size={20} aria-hidden="true" />
             </a>
             <a 
               href="mailto:victorjdacruz@gmail.com" 
               className="hover:text-gray-600 transition-colors"
               aria-label="Email"
             >
-              <Mail size={20} />
+              <Mail size={20} aria-hidden="true" />
             </a>
           </div>
         </div>

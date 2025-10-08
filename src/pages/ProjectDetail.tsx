@@ -116,11 +116,15 @@ const ProjectDetail = () => {
       <Header />
 
       <main className="container mx-auto px-4 pt-8 pb-16">
-        <Link to="/" className="inline-flex items-center text-black font-bold mb-8 hover:underline">
-          <ArrowLeft className="mr-1 h-4 w-4" /> {backText}
+        <Link 
+          to="/" 
+          className="inline-flex items-center text-black font-bold mb-8 hover:underline"
+          aria-label={backText}
+        >
+          <ArrowLeft className="mr-1 h-4 w-4" aria-hidden="true" /> {backText}
         </Link>
 
-        <div className="bg-white border-2 border-black p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
+        <article className="bg-white border-2 border-black p-6 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           <h1 className="text-3xl font-bold mb-4">{project.title}</h1>
           
           <div className="aspect-video w-full overflow-hidden mb-8 border border-black">
@@ -131,30 +135,36 @@ const ProjectDetail = () => {
             />
           </div>
           
-          <h2 className="text-xl font-bold mb-2">{descriptionText}</h2>
-          <p className="mb-6 whitespace-pre-wrap">{project.fullDescription}</p>
+          <section aria-labelledby="description-heading">
+            <h2 id="description-heading" className="text-xl font-bold mb-2">{descriptionText}</h2>
+            <p className="mb-6 whitespace-pre-wrap">{project.fullDescription}</p>
+          </section>
           
-          <h2 className="text-xl font-bold mb-2">{technologiesText}</h2>
-          <div className="flex flex-wrap gap-2 mb-8">
-            {project.technologies.map((tech: string, index: number) => (
-              <span 
-                key={index}
-                className="px-3 py-1 bg-gray-200 border border-black text-sm"
-              >
-                {tech}
-              </span>
-            ))}
-          </div>
+          <section aria-labelledby="technologies-heading">
+            <h2 id="technologies-heading" className="text-xl font-bold mb-2">{technologiesText}</h2>
+            <div className="flex flex-wrap gap-2 mb-8" role="list">
+              {project.technologies.map((tech: string, index: number) => (
+                <span 
+                  key={index}
+                  className="px-3 py-1 bg-gray-200 border border-black text-sm"
+                  role="listitem"
+                >
+                  {tech}
+                </span>
+              ))}
+            </div>
+          </section>
           
           <a 
             href={id && projectsData[id] ? projectsData[id].link : '#'} 
             target="_blank" 
             rel="noopener noreferrer"
             className="inline-block px-4 py-2 bg-black text-white font-bold hover:bg-gray-800 transition-colors"
+            aria-label={`${project.linkText} - ${project.title}`}
           >
             {project.linkText}
           </a>
-        </div>
+        </article>
       </main>
 
       <Footer />

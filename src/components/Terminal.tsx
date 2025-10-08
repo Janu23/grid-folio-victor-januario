@@ -51,8 +51,12 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
   };
 
   return (
-    <div className="bg-terminal-bg p-4 rounded-md w-full h-full overflow-hidden font-mono text-sm md:text-base relative">
-      <div className="flex space-x-2 mb-2">
+    <div 
+      className="bg-terminal-bg p-4 rounded-md w-full h-full overflow-hidden font-mono text-sm md:text-base relative"
+      role="region"
+      aria-label="Terminal about section"
+    >
+      <div className="flex space-x-2 mb-2" role="presentation" aria-hidden="true">
         <div className="w-3 h-3 rounded-full bg-red-500"></div>
         <div className="w-3 h-3 rounded-full bg-yellow-500"></div>
         <div className="w-3 h-3 rounded-full bg-green-500"></div>
@@ -88,7 +92,7 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
       
       {/* Scroll Indicator */}
       {showScrollIndicator && (
-        <div className="absolute bottom-4 right-4">
+        <div className="absolute bottom-4 right-4" aria-hidden="true">
           <ChevronDown className="w-5 h-5 text-terminal-prompt animate-bounce" strokeWidth={3} />
         </div>
       )}

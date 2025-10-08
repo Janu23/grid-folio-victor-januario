@@ -55,11 +55,19 @@ const Index = () => {
 
   return (
     <div className="grid-bg min-h-screen font-mono">
+      {/* Skip to main content link for keyboard navigation */}
+      <a 
+        href="#main-content" 
+        className="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:bg-black focus:text-white focus:px-4 focus:py-2"
+      >
+        {language === 'en' ? 'Skip to main content' : 'Pular para o conteúdo principal'}
+      </a>
+      
       <Header />
 
-      <main className="container mx-auto px-4 pt-8">
+      <main id="main-content" className="container mx-auto px-4 pt-8">
         {/* Profile Section */}
-        <section className="flex flex-col items-center mb-16 pt-8">
+        <section className="flex flex-col items-center mb-16 pt-8" aria-label={language === 'en' ? 'Profile information' : 'Informações do perfil'}>
           <div className="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-black overflow-hidden mb-6">
             <img 
               src="/lovable-uploads/982b3f5f-ccc6-47b6-9a8e-c6f060587abe.png" 
@@ -80,8 +88,8 @@ const Index = () => {
         </section>
 
         {/* About Section */}
-        <section className="mb-16" id="about">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 border-b-2 border-black pb-2">
+        <section className="mb-16" id="about" aria-labelledby="about-heading">
+          <h2 id="about-heading" className="text-2xl md:text-3xl font-bold mb-6 border-b-2 border-black pb-2">
             {t('about')}
           </h2>
           <div className="bg-white border-2 border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] p-4 md:p-6 h-96 md:h-96">
@@ -90,8 +98,8 @@ const Index = () => {
         </section>
 
         {/* Projects Section */}
-        <section className="mb-16" id="projects">
-          <h2 className="text-2xl md:text-3xl font-bold mb-6 border-b-2 border-black pb-2">
+        <section className="mb-16" id="projects" aria-labelledby="projects-heading">
+          <h2 id="projects-heading" className="text-2xl md:text-3xl font-bold mb-6 border-b-2 border-black pb-2">
             {t('projects')}
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">

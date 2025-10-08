@@ -32,8 +32,8 @@ const Header: React.FC = () => {
     <header className="flex justify-between items-center p-6">
       <div className="language-switcher">
         <Select value={language} onValueChange={setLanguage}>
-          <SelectTrigger className="w-[140px] border-2 border-black bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]">
-            <Globe className="mr-2 h-4 w-4" />
+          <SelectTrigger className="w-[140px] border-2 border-black bg-white shadow-[2px_2px_0px_0px_rgba(0,0,0,1)]" aria-label="Select language">
+            <Globe className="mr-2 h-4 w-4" aria-hidden="true" />
             <SelectValue placeholder="Language" />
           </SelectTrigger>
           <SelectContent>
