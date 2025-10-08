@@ -71,8 +71,8 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
             {showPrompt && <span className="cursor"></span>}
           </pre>
           
-          {/* Render content immediately for LCP, control visibility with animation */}
-          <div className={`mt-2 text-terminal-output transition-opacity duration-300 ${animationComplete ? 'opacity-100' : 'opacity-0'}`}>
+          {/* Render content immediately for LCP */}
+          <div className="mt-2 text-terminal-output">
             <p className="mb-4">Victor Januário</p>
             <p className="mb-2 text-terminal-text whitespace-pre-wrap">{aboutText}</p>
             <div className="mt-4">
