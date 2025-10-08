@@ -15,31 +15,29 @@ const Terminal: React.FC<TerminalProps> = ({ aboutText }) => {
   const scrollAreaRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    // Show content immediately for LCP
+    setAnimationComplete(true);
+    
     const whoamiCommand = 'whoami';
     let index = 0;
 
-    // Type the whoami command
+    // Type the whoami command (cosmetic only)
     const typeInterval = setInterval(() => {
       setTypedWhoami(whoamiCommand.substring(0, index + 1));
       index++;
 
       if (index >= whoamiCommand.length) {
         clearInterval(typeInterval);
+        setShowPrompt(false);
         
-        // After typing is complete, wait and then show output
+        // Check if content is scrollable
         setTimeout(() => {
-          setShowPrompt(false);
-          setAnimationComplete(true);
-          
-          // Check if content is scrollable after output is shown
-          setTimeout(() => {
-            const scrollElement = scrollAreaRef.current?.querySelector('[data-radix-scroll-area-viewport]');
-            if (scrollElement) {
-              const hasScroll = scrollElement.scrollHeight > scrollElement.clientHeight;
-              setShowScrollIndicator(hasScroll);
-            }
-          }, 100);
-        }, 500);
+          const scrollElement = scrollAreaRef.current?.querySelector('[data-radix-scroll-area-viewport]');
+          if (scrollElement) {
+            const hasScroll = scrollElement.scrollHeight > scrollElement.clientHeight;
+            setShowScrollIndicator(hasScroll);
+          }
+        }, 100);
       }
     }, 100);
 
