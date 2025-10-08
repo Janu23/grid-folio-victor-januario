@@ -22,7 +22,7 @@ const Index = () => {
       description: language === 'en' ? 
         "A collaborative project that transforms personal stories from the Covid-19 pandemic into an immersive sound map." : 
         "É um projeto colaborativo que transforma histórias pessoais da pandemia da Covid-19 em um mapa sonoro.",
-      image: "/projects/p01-01cartografias.png",
+      image: "/projects/p01-01cartografias.avif",
     },
     {
       id: "project2",
@@ -31,7 +31,7 @@ const Index = () => {
       description: language === 'en' ? 
         "Developed Quizz App as an interactive educational game testing knowledge of all 26 Brazilian state flags plus the Federal District. Combines learning with fun through visual identification challenges." : 
         "Desenvolvi o Quizz App como um jogo educativo interativo que testa conhecimentos sobre as bandeiras dos 26 estados brasileiros e do Distrito Federal. O aplicativo combina aprendizagem com diversão através de um desafio de identificação visual.",
-      image: "/projects/p02-01quizz.jpg",
+      image: "/projects/p02-01quizz.avif",
     },
     {
       id: "project3",
@@ -40,7 +40,7 @@ const Index = () => {
       description: language === 'en' ? 
         "Developed Mega Sorte as a study project to enter Android development with Kotlin. The app generates random combinations of 6 numbers for lottery games, featuring an intuitive interface and simple functionality." : 
         "Desenvolvi o Mega Sorte como um projeto de estudo para ingressar no desenvolvimento Android com Kotlin. O aplicativo gera combinações aleatórias de 6 números, simulando jogos de loteria, com interface intuitiva e funcionalidades simples.",
-      image: "/projects/p03-01mega.png",
+      image: "/projects/p03-01mega.avif",
     },
     {
       id: "project4",
@@ -49,7 +49,7 @@ const Index = () => {
       description: language === 'en' ? 
         "A space for critical-creative reflection on how technology and society shape each other." : 
         "É um espaço de reflexão onde examino as complexas relações entre tecnologia e sociedade através de uma perspectiva crítica e criativa.",
-      image: "/projects/p04-01mente.png",
+      image: "/projects/p04-01mente.avif",
     }
   ].sort((a, b) => b.year.localeCompare(a.year)); 
 
