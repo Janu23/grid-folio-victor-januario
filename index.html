@@ -20,24 +20,30 @@
     <meta name="twitter:site" content="" />
     <meta name="twitter:image" content="https://victorjanuario.netlify.app/lovable-uploads/982b3f5f-ccc6-47b6-9a8e-c6f060587abe.png" />
     
+    <!-- DNS prefetch for external resources -->
+    <link rel="dns-prefetch" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link rel="dns-prefetch" href="https://cdn.gpteng.co">
+    
+    <!-- Preconnect to critical origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Preload critical font files to reduce render blocking -->
+    <!-- Preload critical font files -->
     <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRYEF8RXi4EwQ.woff2" crossorigin>
-    <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/spacemono/v17/i7dNIFZifjKcF5UAWdDRYEF8RUi4CnOKYrA.woff2" crossorigin>
     
+    <!-- Defer non-critical fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
     
-    <!-- Preload critical resources for LCP optimization -->
-    <link rel="preload" as="image" href="/lovable-uploads/982b3f5f-ccc6-47b6-9a8e-c6f060587abe.png" fetchpriority="high" type="image/png">
+    <!-- Preload LCP image for faster rendering -->
+    <link rel="preload" as="image" href="/lovable-uploads/982b3f5f-ccc6-47b6-9a8e-c6f060587abe.png" fetchpriority="high" imagesrcset="/lovable-uploads/982b3f5f-ccc6-47b6-9a8e-c6f060587abe.png 192w" imagesizes="(max-width: 768px) 160px, 192px">
   </head>
 
   <body>
     <div id="root"></div>
     <!-- IMPORTANT: DO NOT REMOVE THIS SCRIPT TAG OR THIS VERY COMMENT! -->
-    <script src="https://cdn.gpteng.co/gptengineer.js" type="module"></script>
+    <script src="https://cdn.gpteng.co/gptengineer.js" type="module" defer></script>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>
