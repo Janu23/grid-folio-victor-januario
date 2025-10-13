@@ -29,12 +29,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     
-    <!-- Preload critical font files -->
+    <!-- Preload critical font files for faster LCP -->
     <link rel="preload" as="font" type="font/woff2" href="https://fonts.gstatic.com/s/spacemono/v17/i7dPIFZifjKcF5UAWdDRYEF8RXi4EwQ.woff2" crossorigin>
     
-    <!-- Defer non-critical fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
-    <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet"></noscript>
+    <!-- Load font immediately for LCP text -->
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Preload LCP image for faster rendering -->
     <link rel="preload" as="image" href="/lovable-uploads/profile-192.webp" fetchpriority="high" imagesrcset="/lovable-uploads/profile-192.webp 192w, /lovable-uploads/profile-384.webp 384w" imagesizes="(max-width: 768px) 160px, 192px" type="image/webp">
