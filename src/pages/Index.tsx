@@ -69,13 +69,9 @@ const Index = () => {
         {/* Profile Section */}
         <section className="flex flex-col items-center mb-16 pt-8" aria-label={language === 'en' ? 'Profile information' : 'Informações do perfil'}>
           <div className="w-40 h-40 md:w-48 md:h-48 rounded-full border-4 border-black overflow-hidden mb-6">
-            {/* TODO: Optimize image - Convert PNG to AVIF and create responsive sizes:
-                - 192w: /lovable-uploads/profile-192.avif
-                - 384w: /lovable-uploads/profile-384.avif (2x retina)
-                Current size: 868KB PNG 1279x1280 → Target: <50KB AVIF 192x192 
-                Use https://squoosh.app/ to convert and compress */}
             <img 
-              src="/lovable-uploads/982b3f5f-ccc6-47b6-9a8e-c6f060587abe.png" 
+              src="/lovable-uploads/profile-192.webp" 
+              srcSet="/lovable-uploads/profile-192.webp 192w, /lovable-uploads/profile-384.webp 384w"
               alt="Victor Januário" 
               className="w-full h-full object-cover"
               width="192"
